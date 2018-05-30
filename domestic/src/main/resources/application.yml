@@ -1,0 +1,19 @@
+# 设置激活的环境
+spring:
+  profiles:
+     active: dev
+# mybatis 配置
+mybatis:
+  type-aliases-package: com.dh.domestic.domain
+  mapper-locations: classpath:mapper/*.xml
+# 通用 Mapper 配置
+mapper:
+  mappers: com.dh.domestic.base.BaseDao
+  not-empty: false
+  identity: INFORMIX
+# 分页插件配置
+pagehelper: 
+  helperDialect: INFORMIX
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

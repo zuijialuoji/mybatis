@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dh.domestic.dao.CatalogDao">
+
+    <resultMap id="Catalog" type="com.dh.domestic.domain.Catalog">
+        <result column="pk_ndoe_catalog" property="id"/>
+        <result column="cata_name" property="cataName"/>
+        <result column="fk_parent_id" property="parentId"/>
+        <result column="default_directory" property="defaultDir"/>
+        <result column="fk_the_nod_id" property="nodId"/>
+        <result column="cata_type" property="cataType"/>
+        <result column="cre_date" property="creDate"/>
+        <result column="cre_user" property="creUser"/>
+        <result column="upd_date" property="updDate"/>
+        <result column="upd_user" property="updUser"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="attach_Id" property="attachId"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        pk_ndoe_catalog,
+        fk_parent_id,
+        cre_date,
+        cre_user,
+        del_flag,
+        upd_date,
+        upd_user,
+        cata_name,
+        default_directory,
+        fk_the_nod_id,
+        cata_type,
+        attach_Id
+    </sql>
+
+    <!--     <insert id="insert" parameterType="com.dh.domestic.domain.Catalog" > -->
+    <!--         INSERT INTO dom_ndoe_catalog ( -->
+    <!--             pk_ndoe_catalog, -->
+    <!--             fk_parent_id, -->
+    <!--             cre_date, -->
+    <!--             cre_user, -->
+    <!--             del_flag, -->
+    <!--             upd_date, -->
+    <!--             upd_user, -->
+    <!--             cata_name, -->
+    <!--             default_directory, -->
+    <!--             fk_the_nod_id, -->
+    <!--             cata_type -->
+    <!--         ) -->
+    <!--         VALUES( -->
+    <!--             #{Catalog.id}, -->
+    <!--             #{Catalog.fkParentId}, -->
+    <!--             #{Catalog.creDate}, -->
+    <!--             #{Catalog.creUser}, -->
+    <!--             #{Catalog.delFlag}, -->
+    <!--             #{Catalog.updDate}, -->
+    <!--             #{Catalog.updUser}, -->
+    <!--             #{Catalog.cataName}, -->
+    <!--             #{Catalog.defaultDirectory}, -->
+    <!--             #{Catalog.fkTheNodId}, -->
+    <!--             #{Catalog.cataType} -->
+    <!--         ) -->
+    <!--     </insert> -->
+
+    <!--     <delete id="delete" parameterType="java.util.Map" > -->
+    <!--         DELETE FROM dom_ndoe_catalog -->
+    <!--         WHERE id = #{id} -->
+    <!--     </delete> -->
+
+    <!--     <update id="update" parameterType="com.dh.domestic.domain.Catalog" > -->
+    <!--         UPDATE dom_ndoe_catalog -->
+    <!--         SET -->
+    <!--             fk_parent_id = #{Catalog.fkParentId}, -->
+    <!--             cre_date = #{Catalog.creDate}, -->
+    <!--             cre_user = #{Catalog.creUser}, -->
+    <!--             del_flag = #{Catalog.delFlag}, -->
+    <!--             upd_date = #{Catalog.updDate}, -->
+    <!--             upd_user = #{Catalog.updUser}, -->
+    <!--             cata_name = #{Catalog.cataName}, -->
+    <!--             default_directory = #{Catalog.defaultDirectory}, -->
+    <!--             fk_the_nod_id = #{Catalog.fkTheNodId}, -->
+    <!--             cata_type = #{Catalog.cataType}, -->
+    <!--             UpdateTime = NOW() -->
+    <!--         WHERE pk_ndoe_catalog = #{Catalog.id} -->
+    <!--     </update> -->
+
+    <!--     <select id="condition" parameterType="java.util.Map" resultMap="Catalog"> -->
+    <!--         SELECT <include refid="Base_Column_List" /> -->
+    <!--         FROM dom_ndoe_catalog -->
+    <!--          <where></where> -->
+    <!--            <choose> -->
+    <!--             <when test="sort != null and sort.trim() != ''"> -->
+    <!--                 order by ${sort} ${order} -->
+    <!--             </when> -->
+    <!-- 			<otherwise> -->
+    <!--                 order by pk_ndoe_catalog desc -->
+    <!-- 			</otherwise> -->
+    <!--         </choose> -->
+    <!--     </select> -->
+    <!-- 	<update id="remove"> -->
+    <!-- 		update dom_ndoe_catalog -->
+    <!-- 		<set> -->
+    <!-- 			del_flag = 0, -->
+    <!-- 			<if test="updUser != null"> upd_user = #{updUser},</if> -->
+    <!-- 			<if test="updDate != null"> upd_date = #{updDate}</if> -->
+    <!-- 		</set> -->
+    <!-- 		where pk_ndoe_catalog = #{id} -->
+    <!-- 	</update> -->
+    <!-- 	<update id="batchRemove"> -->
+    <!-- 		update dom_ndoe_catalog  -->
+    <!-- 		 <set> -->
+    <!-- 			del_flag = 0, -->
+    <!-- 			<if test="updUser != null"> upd_user = #{updUser},</if> -->
+    <!-- 			<if test="updDate != null"> upd_date = #{updDate} </if> -->
+    <!-- 		 </set> -->
+    <!-- 		 where pk_ndoe_catalog in -->
+    <!-- 		<foreach item="Id" collection="Ids" open="(" separator="," -->
+    <!-- 			close=")"> -->
+    <!-- 		    #{id} -->
+    <!-- 		</foreach> -->
+    <!-- 	</update> -->
+</mapper>

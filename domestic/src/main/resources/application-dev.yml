@@ -1,0 +1,15 @@
+server: 
+  port: 8081
+debug: true
+logging: 
+  level: 
+    root: warn
+    tk.mybatis.springboot.mapper: trace
+
+#8S
+spring: 
+  datasource: 
+    url: 'jdbc:informix-sqli://192.168.200.199:9088/domestic:informixserver=gbase;DB_LOCALE=zh_cn.utf8;CLIENT_LOCALE=zh_cn.utf8;NEWCODESET=UTF8,GB18030-2000,5488'
+    username: informix
+    password: informix
+    driverClassName: com.informix.jdbc.IfxDriver
